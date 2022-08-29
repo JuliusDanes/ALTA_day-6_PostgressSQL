@@ -1,0 +1,52 @@
+-- operator: id int(11), name varchar(255), craated_at , updates_at
+CREATE TABLE operators(
+    id INT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP  NOT NULL,
+    update_at TIMESTAMP  NOT NULL
+);
+
+
+-- insert 5 data table product
+INSERT INTO products (product_id, product_name, product_type, product_desc, operator, payment_method) 
+VALUES (1, 'Baju Koko', 'pakaian', 'desc here', 'op_name_1', 'paylater');
+INSERT INTO products (product_id, product_name, product_type, product_desc, operator, payment_method) 
+VALUES (2, 'Gergaji', 'pertukangan', 'desc here', 'op_name_2', 'paylater');
+INSERT INTO products (product_id, product_name, product_type, product_desc, operator, payment_method) 
+VALUES (3, 'Bor Listrik', 'pertukangan', 'desc here', 'op_name_2', 'cod');
+INSERT INTO products (product_id, product_name, product_type, product_desc, operator, payment_method) 
+VALUES (4, 'Laptop', 'gadget', 'desc here', 'op_name_4', 'transfer_online');
+INSERT INTO products (product_id, product_name, product_type, product_desc, operator, payment_method) 
+VALUES (5, 'Earphone', 'gadget', 'desc here', 'op_name_4', 'cod');
+
+
+-- insert 5 data table users
+INSERT INTO users (user_id, name, alamat, dob, status_user, gender, created_at, update_at) 
+VALUES (1, 'Kiano', 'jakarta', CURRENT_DATE, 'active', 'male', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO users (user_id, name, alamat, dob, status_user, gender, created_at, update_at) 
+VALUES (2, 'Santoso', 'yogyakarta', CURRENT_DATE, 'active', 'male', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO users (user_id, name, alamat, dob, status_user, gender, created_at, update_at) 
+VALUES (3, 'Aji', 'nusantara', CURRENT_DATE, 'active', 'male', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO users (user_id, name, alamat, dob, status_user, gender, created_at, update_at) 
+VALUES (4, 'Farhan', 'jakarta', CURRENT_DATE, 'active', 'male', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO users (user_id, name, alamat, dob, status_user, gender, created_at, update_at) 
+VALUES (5, 'Niken', 'cirebon', CURRENT_DATE, 'active', 'female', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+
+-- insert 5 data di operators
+INSERT INTO operators (id, name, created_at, update_at) VALUES (1, 'op_name_1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO operators (id, name, created_at, update_at) VALUES (2, 'op_name_1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO operators (id, name, created_at, update_at) VALUES (3, 'op_name_1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO operators (id, name, created_at, update_at) VALUES (4, 'op_name_1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+INSERT INTO operators (id, name, created_at, update_at) VALUES (5, 'op_name_1', CURRENT_TIMESTAMP, CURRENT_TIMESTAMP);
+
+
+-- select  user gender male
+SELECT name FROM users WHERE gender = 'male';
+SELECT * FROM users WHERE id = 3;
+
+-- update 
+UPDATE products SET product_name = 'product dummy' WHERE product_id=1;
+
+-- delete
+DELETE FROM products WHERE product_id=1;
